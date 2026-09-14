@@ -1,4 +1,4 @@
-#Python Program: 
+# Python Program: 
 You are requested to write down a python script to scan your local
 machine 127.0.0.1. The functionality of your program is like the nmap
 functionality, but your script is not allowed to import the Python nmap
