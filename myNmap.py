@@ -1,10 +1,12 @@
-import sys #access to interpreter
+import sys #access to command line
 import socket #communicate with the network
 
-#Get TCP open ports on the target
+# Check that the target was input
 
-#Check that the target was input
+# Get target IP from cmd line
 
-#Check that target IP can be reached
+# Scan the TCP ports
 
-#Output TCP open ports on target
+# Check if target IP can be reached
+
+# Output TCP open ports on target
