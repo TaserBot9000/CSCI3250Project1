@@ -22,6 +22,8 @@ except ValueError:
     print(f"{target_ip} is not an IP.")
     sys.exit()
     
+#Ensure the ip address is reachable
+
 # Scan the TCP ports
 
 # Check if target IP can be reached
