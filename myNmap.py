@@ -11,6 +11,7 @@ if argument_input > 1: # Ensure there was input
     
 else:
     print("Nothing was input.") 
+    sys.exit()
 
 # Scan the TCP ports
 
