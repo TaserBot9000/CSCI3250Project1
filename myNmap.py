@@ -1,4 +1,5 @@
 import sys #access to command line arguments
+import ipaddress #ipv4 and ipv6 library
 import socket #communicate with the network
 
 # Check that the target was input
@@ -10,9 +11,17 @@ if argument_input > 1: # Ensure there was input
     print(f"Input: {target_ip}") 
     
 else:
-    print("Nothing was input.") 
+    print(f"Nothing was input.") 
     sys.exit()
 
+# Ensure the ip address format is enforced
+try:
+    ipaddress.ip_address(address=target_ip)
+
+except ValueError:
+    print(f"{target_ip} is not an IP.")
+    sys.exit()
+    
 # Scan the TCP ports
 
 # Check if target IP can be reached
