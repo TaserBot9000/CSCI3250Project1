@@ -1,3 +1,5 @@
+# python3 myNmap.py 127.0.0.1
+
 import sys #access to command line arguments
 import ipaddress #ipv4 and ipv6 library
 import socket #communicate with the network
@@ -7,7 +9,7 @@ argument_input = len(sys.argv) #total length of argument vector
 
 if argument_input > 1: # Ensure there was input
     # Get target IP from cmd line
-    target_ip = sys.argv[1] #
+    target_ip = sys.argv[1] 
     print(f"Input: {target_ip}") 
     
 else:
@@ -16,14 +18,14 @@ else:
 
 # Ensure the ip address format is enforced
 try:
-    ipaddress.ip_address(address=target_ip)
+    ipaddress.ip_address(address=target_ip) 
 
-except ValueError:
+except ValueError: #Return a value error if any non-ip is put
     print(f"{target_ip} is not an IP.")
-    sys.exit()
-    
-#Ensure the ip address is reachable
+    sys.exit() 
 
+#Ensure the ip address is reachable
+    
 # Scan the TCP ports
 
 # Check if target IP can be reached
