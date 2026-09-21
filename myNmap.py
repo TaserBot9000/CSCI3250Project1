@@ -26,7 +26,8 @@ except ValueError: #Return a value error if any non-ip is put
 
 #Attempt a TCP connection
 tcp_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-port = 80 #try connecting to a listening port
+tcp_connection.settimeout(10.0)
+port = 80 #test a TCP port
 
 try:
     tcp_connection.connect((target_ip, port))
