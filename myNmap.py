@@ -24,7 +24,17 @@ except ValueError: #Return a value error if any non-ip is put
     print(f"{target_ip} is not an IP.")
     sys.exit() 
 
-#Ensure the ip address is reachable
+#Attempt a TCP connection
+tcp_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+port = 80 #try connecting to a listening port
+
+try:
+    tcp_connection.connect((target_ip, port))
+    print("your connection succeeded.")
+
+except OSError as TCP_error:
+    print(TCP_error)
+    sys.exit()
     
 # Scan the TCP ports
 
