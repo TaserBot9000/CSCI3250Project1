@@ -24,7 +24,7 @@ except ValueError: #handle invalid IP address
 
 #Attempt a TCP connection
 tcp_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-tcp_connection.settimeout(10.0)
+tcp_connection.settimeout(1.0)
 port = 8000 #test default http.server port
 
 #Try connecting to the target ip and port
