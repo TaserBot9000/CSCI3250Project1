@@ -23,20 +23,18 @@ except ValueError: #handle invalid IP address
     sys.exit() 
 
 #Attempt a TCP connection
-tcp_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-tcp_connection.settimeout(1.0)
-port = 8000 #test default http.server port (may need to be changed for extended port scanning)
+for current_port in range(1, 23): #temporary range, change later
+    port_scan = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    port_scan.settimeout(1.0)
 
-#Try connecting to the target ip and port
-try:
-    tcp_connection.connect((target_ip, port))
-    print(f"your connection succeeded. Port {port} reached.")
+    try:
+        port_scan.connect((target_ip, current_port))
+        print(f"Open ports: {current_port}")
 
-except OSError as TCP_error: 
-    print(TCP_error) 
-    sys.exit()
+    except OSError: #If connection fails dont print it.
+        pass
 
-# Scan the TCP ports
+    port_scan.close()
 
 # Check if target IP can be reached
 
