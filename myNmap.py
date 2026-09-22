@@ -1,5 +1,3 @@
-# python3 myNmap.py 127.0.0.1
-
 import sys #access to command line arguments
 import ipaddress #ipv4 and ipv6 library
 import socket #communicate with the network
@@ -10,34 +8,39 @@ argument_input = len(sys.argv) #total length of argument vector
 if argument_input > 1: # Ensure there was input
     # Get target IP from cmd line
     target_ip = sys.argv[1] 
-    print(f"Input: {target_ip}") 
+    print(f"Ip address: {target_ip}") 
     
 else:
     print(f"Nothing was input.") 
     sys.exit()
 
-# Ensure the ip address format is enforced
+# Ensure the IP address format is enforced
 try:
     ipaddress.ip_address(address=target_ip) 
 
-except ValueError: #Return a value error if any non-ip is put
-    print(f"{target_ip} is not an IP.")
+except ValueError: #handle invalid IP address
+    print(f"{target_ip} is not an IP address.")
     sys.exit() 
 
 #Attempt a TCP connection
 tcp_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcp_connection.settimeout(10.0)
-port = 8000 #test a TCP port
+port = 8000 #test default http.server port
 
+#Try connecting to the target ip and port
 try:
     tcp_connection.connect((target_ip, port))
-    print("your connection succeeded.")
+    print(f"your connection succeeded. Port {port} reached.")
 
-except OSError as TCP_error:
-    print(TCP_error)
+except OSError as TCP_error: 
+    print(TCP_error) 
     sys.exit()
-    
+
 # Scan the TCP ports
+
+# Check if target IP can be reached
+
+# Output TCP open ports on target
 
 # Check if target IP can be reached
 
