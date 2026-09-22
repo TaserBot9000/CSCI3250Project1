@@ -29,7 +29,7 @@ for current_port in range(1, 23): #temporary range, change later
 
     try:
         port_scan.connect((target_ip, current_port))
-        print(f"Open ports: {current_port}")
+        print(f"Port: {current_port} is listening.")
 
     except OSError: #If connection fails dont print it.
         pass
