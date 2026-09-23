@@ -20,18 +20,18 @@ try:
     ipaddress.ip_address(address=target_ip) 
 
 except ValueError: #handle invalid IP address
-    print(f"{target_ip} is not an IP address.")
+    print(f"{target_ip} is not an IP address.") 
     sys.exit() 
 
 #See if IP is reachable 
 reachable = False 
-test_ping = subprocess.run(["ping",target_ip])
+test_ping = subprocess.run(["ping",target_ip]) #use a ping to reach IP
 
-if test_ping.returncode == 0:
+if test_ping.returncode == 0: #command successful
     reachable = True
 
-if not reachable:
-    print(f"{target_ip} is not reachable")
+if not reachable: 
+    print(f"{target_ip} is not reachable") 
     sys.exit()
 
 #try to connect
