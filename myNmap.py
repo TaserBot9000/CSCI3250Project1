@@ -1,7 +1,7 @@
 import sys #access to command line arguments
 import ipaddress #ipv4 and ipv6 library
 import socket #communicate with the network
-import subprocess #use shell scripts
+import subprocess #run commands
 
 # Check that the target was input
 argument_input = len(sys.argv) #total length of argument vector
